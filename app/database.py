@@ -11,7 +11,7 @@ engine = create_async_engine(
         settings.postgres_port,
         settings.postgres_db,
     ),
-    echo=True,
+    echo=False,
 )
 
 async_session = sessionmaker(

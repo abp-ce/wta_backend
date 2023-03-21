@@ -38,18 +38,18 @@ pip install -r requirements.txt
 alembic upgrade head
 ```
 
+Запустить проект:
+
+```
+uvicorn main:app
+```
+
 Запустить celery worker c планировщником:
 
 ```
 celery -A app.tasks worker -B --loglevel=INFO
 ```
 
-
-Запустить проект:
-
-```
-uvicorn main:app --reload
-```
 ### Стек:
  - fastapi
  - SQLAlchemy

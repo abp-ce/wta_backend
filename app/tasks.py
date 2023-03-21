@@ -11,7 +11,7 @@ celery = Celery("tasks", broker="redis://localhost")
 celery.conf.beat_schedule = {
     "add-every-hour": {
         "task": "app.tasks.celery_parse",
-        "schedule": crontab(minute="*/10"),
+        "schedule": crontab(minute=10),
     },
 }
 
