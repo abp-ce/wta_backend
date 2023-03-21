@@ -55,7 +55,7 @@ async def parse_pages():
     return await Parse().parse_site()
 
 
-@router.get("/celery", status_code=status.HTTP_202_ACCEPTED)
+@router.get("/celery-parse", status_code=status.HTTP_202_ACCEPTED)
 async def celery():
     celery_parse.delay()
     return {"message": "Parse queued"}
