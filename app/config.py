@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     postgres_port: str
     postgres_user: str
     postgres_password: str
+    redis_host: str
 
     class Config:
         env_file = ".env"

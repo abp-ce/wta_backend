@@ -3,9 +3,10 @@ import asyncio
 from celery import Celery
 from celery.schedules import crontab
 
+from .config import settings
 from .service import Parse
 
-celery = Celery("tasks", broker="redis://localhost")
+celery = Celery("tasks", broker=f"redis://{settings.redis_host}")
 
 
 celery.conf.beat_schedule = {
